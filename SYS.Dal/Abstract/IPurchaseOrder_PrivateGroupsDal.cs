@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace SYS.Dal.Abstract
 {
-    public interface IPurchaseOrder_PrivateGroups
+    public interface IPurchaseOrder_PrivateGroupsDal
     {
         List<PurchaseOrder_PrivateGroups> GetAll();
         PurchaseOrder_PrivateGroups GetById(int id);
         void Add(PurchaseOrder_PrivateGroups purchaseorder_privategroups);
-        void Remove(int id);
+        void Delete(int id);
         void Update(PurchaseOrder_PrivateGroups purchaseorder_privategorups);
     }
 }

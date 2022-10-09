@@ -12,7 +12,7 @@ namespace SYS.Dal.Abstract
         List<Firm_PrivateGroups> GetAll();
         Firm_PrivateGroups GetById(int id);
         void Add(Firm_PrivateGroups firm_privategroups);
-        void Remove(int id);
+        void Delete(Countries countries);
         void Update(Firm_PrivateGroups firm_privategroups);
     }
 }

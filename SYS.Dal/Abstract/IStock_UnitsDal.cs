@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace SYS.Dal.Abstract
 {
-    public interface IFirmsDal
+    public interface IStock_UnitsDal
     {
-        List<Firms> GetAll();
-        Firms GetById(int id);
-        void Add(Firms firms);
+        List<Stock_Units> GetAll();
+        Stock_Units GetById(int id);
+        void Add(Stock_Units stock_units);
         void Delete(int id);
-        void Update(Firms firms);
+        void Update(Stock_Units stocks_units);
     }
 }

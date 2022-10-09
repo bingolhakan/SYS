@@ -25,7 +25,7 @@ namespace SYS.Dal.Conctrete.EntityFramework
             throw new NotImplementedException();
         }
 
-        public void Remove(int id)
+        public void Delete(Countries countries)
         {
             throw new NotImplementedException();
         }

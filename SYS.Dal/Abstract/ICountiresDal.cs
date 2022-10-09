@@ -12,7 +12,7 @@ namespace SYS.Dal.Abstract
         List<ICountiresDal> GetAll();
         Countries GetById(int id);
         void Add(Countries countries);
-        void Remove(int id);
+        void Delete(Countries countries);
         void Update(Countries countries);
 
     }
