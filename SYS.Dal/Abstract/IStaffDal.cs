@@ -12,7 +12,7 @@ namespace SYS.Dal.Abstract
         List<Staffs> GetAll();
         Staffs GetById(int id);
         void Add(Staffs staffs);
-        void Delete(int id);
+        void Delete(Staffs staffs);
         void Update(Staffs staffs);
     }
 }

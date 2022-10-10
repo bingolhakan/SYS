@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace SYS.Dal.Abstract
 {
-    public interface ICountiresDal
+    public interface ICountriesDal
     {
-        List<ICountiresDal> GetAll();
+        List<Countries> GetAll();
         Countries GetById(int id);
         void Add(Countries countries);
         void Delete(Countries countries);

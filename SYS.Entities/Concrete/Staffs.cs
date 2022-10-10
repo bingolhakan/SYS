@@ -12,6 +12,7 @@ namespace SYS.Entities.Concrete
         public int StaffID { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
+        public string Department { get; set; }
         public string Address { get; set; }
         public string District { get; set; }
         public string City { get; set; }

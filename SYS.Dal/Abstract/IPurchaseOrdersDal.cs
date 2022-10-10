@@ -12,7 +12,7 @@ namespace SYS.Dal.Abstract
         List<PurchaseOrders> GetAll();
         PurchaseOrders GetById(int id);
         void Add(PurchaseOrders purchaseorders);
-        void Delete(int id);
+        void Delete(PurchaseOrders purchaseorders);
         void Update(PurchaseOrders purchaseorders);
     }
 }

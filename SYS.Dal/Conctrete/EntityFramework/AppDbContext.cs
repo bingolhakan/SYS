@@ -13,15 +13,15 @@ namespace SYS.Dal.Conctrete.EntityFramework
         public DbSet<Countries> countries { get; set; }
         public DbSet<Currencies> currencies { get; set; }
         public DbSet<Firm_PrivateGroups> firm_privategroups { get; set; }
-        public DbSet<Firm_Types> firm_Types { get; set; }
+        public DbSet<Firm_Types> firm_types { get; set; }
         public DbSet<Firms> firms { get; set; }
         public DbSet<PurchaseOrder_PrivateGroups> purchaseorder_privategroups { get; set; }
         public DbSet<PurchaseOrders> purchaseorders { get; set; }
         public DbSet<SaleOrder_PrivateGroups> saleorder_privategroups { get; set; }
-        public DbSet<SaleOrders> SaleOrders { get; set; }
+        public DbSet<SaleOrders> saleorders { get; set; }
         public DbSet<Staffs> staffs { get; set; }
         public DbSet<Stock_PrivateGroups> stock_privategroups { get; set; }
-        public DbSet<Stock_Units> Stock_Units { get; set; }
+        public DbSet<Stock_Units> stock_units { get; set; }
         public DbSet<Stocks> stocks { get; set; }
         public DbSet<Users> users { get; set; }
 

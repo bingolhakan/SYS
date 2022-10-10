@@ -12,7 +12,7 @@ namespace SYS.Dal.Abstract
         List<Stock_PrivateGroups> GetAll();
         Stock_PrivateGroups GetById(int id);
         void Add(Stock_PrivateGroups stock_privategroups);
-        void Delete(int id);
+        void Delete(Stock_PrivateGroups stock_privategroups);
         void Update(Stock_PrivateGroups stock_privategroups);
     }
 }

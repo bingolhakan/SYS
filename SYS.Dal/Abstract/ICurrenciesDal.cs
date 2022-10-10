@@ -12,7 +12,7 @@ namespace SYS.Dal.Abstract
         List<Currencies> GetAll();
         Currencies GetById(int id);
         void Add(Currencies currencies);
-        void Delete(Countries countries);
+        void Delete(Currencies currencies);
         void Update(Currencies currencies);
     }
 }

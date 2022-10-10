@@ -12,7 +12,7 @@ namespace SYS.Dal.Abstract
         List<Stocks> GetAll();
         Stocks GetById(int id);
         void Add(Stocks stocks);
-        void Delete(int id);
+        void Delete(Stocks stocks);
         void Update(Stocks stocks);
     }
 }

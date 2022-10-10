@@ -12,7 +12,7 @@ namespace SYS.Dal.Abstract
         List<Firms> GetAll();
         Firms GetById(int id);
         void Add(Firms firms);
-        void Delete(int id);
+        void Delete(Firms firms);
         void Update(Firms firms);
     }
 }

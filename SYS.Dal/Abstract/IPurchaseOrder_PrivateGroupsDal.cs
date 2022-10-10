@@ -12,7 +12,7 @@ namespace SYS.Dal.Abstract
         List<PurchaseOrder_PrivateGroups> GetAll();
         PurchaseOrder_PrivateGroups GetById(int id);
         void Add(PurchaseOrder_PrivateGroups purchaseorder_privategroups);
-        void Delete(int id);
+        void Delete(PurchaseOrder_PrivateGroups purchaseorder_privategroups);
         void Update(PurchaseOrder_PrivateGroups purchaseorder_privategorups);
     }
 }

@@ -12,7 +12,7 @@ namespace SYS.Dal.Abstract
         List<SaleOrders> GetAll();
         SaleOrders GetById(int id);
         void Add(SaleOrders saleorders);
-        void Delete(int id);
+        void Delete(SaleOrders saleorders);
         void Update(SaleOrders saleorders);
     }
 }

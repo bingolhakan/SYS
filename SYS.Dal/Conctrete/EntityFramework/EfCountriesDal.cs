@@ -8,31 +8,35 @@ using System.Threading.Tasks;
 
 namespace SYS.Dal.Conctrete.EntityFramework
 {
-    public class EfCountriesDal : ICountiresDal
+    public class EfCountriesDal : ICountriesDal
     {
+        AppDbContext _context = new AppDbContext();
         public void Add(Countries countries)
         {
-            throw new NotImplementedException();
+            _context.countries.Add(countries);
+            _context.SaveChanges();
         }
 
-        public List<ICountiresDal> GetAll()
+        public List<Countries> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.countries.ToList();
         }
 
         public Countries GetById(int id)
         {
-            throw new NotImplementedException();
+            return _context.countries.Find(id);
         }
 
         public void Delete(Countries countries)
         {
-            throw new NotImplementedException();
+            _context.countries.Remove(countries);
+            _context.SaveChanges();
         }
 
         public void Update(Countries countries)
         {
-            throw new NotImplementedException();
+            _context.countries.Update(countries);
+            _context.SaveChanges();
         }
     }
 }
