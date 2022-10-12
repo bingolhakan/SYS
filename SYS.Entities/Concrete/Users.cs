@@ -15,7 +15,7 @@ namespace SYS.Entities.Concrete
         public string Surname { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
-        public Staffs StaffID { get; set; }
+        public Employees StaffID { get; set; }
         public bool IsDelete { get; set; }
     }
 }

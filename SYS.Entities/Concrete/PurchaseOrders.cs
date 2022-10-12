@@ -13,7 +13,7 @@ namespace SYS.Entities.Concrete
         public Firms FirmID { get; set; }
         public DateTime OrderDate { get; set; }
         public PurchaseOrder_PrivateGroups PurchaseOrder_PrivateGroupsID { get; set; }
-        public Staffs StaffID { get; set; }
+        public Employees StaffID { get; set; }
         public Stocks StockID { get; set; }
         public Stocks Name { get; set; }
         public double Quantity { get; set; }

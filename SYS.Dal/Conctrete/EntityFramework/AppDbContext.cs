@@ -19,7 +19,7 @@ namespace SYS.Dal.Conctrete.EntityFramework
         public DbSet<PurchaseOrders> purchaseorders { get; set; }
         public DbSet<SaleOrder_PrivateGroups> saleorder_privategroups { get; set; }
         public DbSet<SaleOrders> saleorders { get; set; }
-        public DbSet<Staffs> staffs { get; set; }
+        public DbSet<Employees> staffs { get; set; }
         public DbSet<Stock_PrivateGroups> stock_privategroups { get; set; }
         public DbSet<Stock_Units> stock_units { get; set; }
         public DbSet<Stocks> stocks { get; set; }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SYS.Entities.Concrete
 {
-    public class Staffs : IEntity
+    public class Employees : IEntity
     {
         public int StaffID { get; set; }
         public string Name { get; set; }

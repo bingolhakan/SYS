@@ -8,32 +8,32 @@ using System.Threading.Tasks;
 
 namespace SYS.Dal.Conctrete.EntityFramework
 {
-    public class EfStaffDal : IStaffDal
+    public class EfEmployessDal : IEmployeesDal
     {
         AppDbContext _context = new AppDbContext();
-        public void Add(Staffs staffs)
+        public void Add(Employees staffs)
         {
             _context.staffs.Add(staffs);
             _context.SaveChanges();
         }
 
-        public void Delete(Staffs staffs)
+        public void Delete(Employees staffs)
         {
             _context.staffs.Remove(staffs);
             _context.SaveChanges();
         }
 
-        public List<Staffs> GetAll()
+        public List<Employees> GetAll()
         {
             return _context.staffs.ToList();
         }
 
-        public Staffs GetById(int id)
+        public Employees GetById(int id)
         {
             return _context.staffs.Find(id);
         }
 
-        public void Update(Staffs staffs)
+        public void Update(Employees staffs)
         {
             _context.staffs.Update(staffs);
             _context.SaveChanges();

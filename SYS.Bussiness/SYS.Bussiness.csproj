@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Abstract\" />
-    <Folder Include="Conctrete\" />
+    <ProjectReference Include="..\SYS.Dal\SYS.Dal.csproj" />
+    <ProjectReference Include="..\SYS.Entities\SYS.Entities.csproj" />
   </ItemGroup>
 
 </Project>
