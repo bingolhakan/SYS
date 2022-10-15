@@ -12,5 +12,7 @@ namespace SYS.Entities.Concrete
         public int CountryID { get; set; }
         public string CountryName { get; set; }
         public bool IsDelete { get; set; }
+
+        public IEnumerable<Employees> employees { get; set; }
     }
 }

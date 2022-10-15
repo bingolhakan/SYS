@@ -12,5 +12,7 @@ namespace SYS.Entities.Concrete
         public int Firm_TypeID { get; set; }
         public string Description { get; set; }
         public bool IsDelete { get; set; }
+
+        public IEnumerable<Firms> firms { get; set; }
     }
 }

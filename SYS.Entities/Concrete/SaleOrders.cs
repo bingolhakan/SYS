@@ -10,20 +10,25 @@ namespace SYS.Entities.Concrete
     public class SaleOrders : IEntity
     {
         public int SaleOrderID { get; set; }
-        public Firms FirmID { get; set; }
         public DateTime OrderDate { get; set; }
-        public SaleOrder_PrivateGroups SaleOrder_PrivateGroupsID { get; set; }
-        public Employees StaffID { get; set; }
-        public Stocks StockID { get; set; }
-        public Stocks Name { get; set; }
+        public string Name { get; set; }
+        public double VatRate { get; set; }
+        public double DiscountRate { get; set; }
         public double Quantity { get; set; }
         public double UnitPrice { get; set; }
-        public Currencies CurrencyID { get; set; }
-        public Stocks VatRate { get; set; }
-        public Stocks DiscountRate { get; set; }
         public double SubTotal { get; set; }
-        public DateOnly DeliveryDate { get; set; }
-        public DateOnly RevisedDeliveryDate { get; set; }
+        public DateTime DeliveryDate { get; set; }
+        public DateTime RevisedDeliveryDate { get; set; }
         public bool IsDelete { get; set; }
+
+        public Firms FirmID { get; set; }
+        public Employees employees { get; set; }
+        public int EmployeeID { get; set; }
+        public Stocks stocks { get; set; }
+        public int StockID { get; set; }
+        public Currencies currencies { get; set; }
+        public int CurrencyID { get; set; }
+
+        public IEnumerable<Firms> firms { get; set; }
     }
 }

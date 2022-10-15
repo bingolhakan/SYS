@@ -12,5 +12,7 @@ namespace SYS.Entities.Concrete
         public int UnitID { get; set; }
         public string UnitDescription { get; set; }
         public bool IsDelete { get; set; }
+
+        public IEnumerable<Stocks> stocks { get; set; }
     }
 }

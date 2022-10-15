@@ -12,13 +12,18 @@ namespace SYS.Entities.Concrete
         public int StockID { get; set; }
         public string StockName { get; set; }
         public string StockName2 { get; set; }
-        public Stock_Units UnitID { get; set; }
         public double PurchasePrice { get; set; }
         public double SalePrice { get; set; }
-        public Currencies CurrencyID { get; set; }
-        public Stock_PrivateGroups GroupID { get; set; }
         public double VatRate { get; set; }
         public double DiscountRate { get; set; }
         public bool IsDelete { get; set; }
+
+        public Stock_Units stock_units { get; set; }
+        public int UnitID { get; set; }
+        public Currencies currencies { get; set; }
+        public int CurrenyID { get; set; }
+
+        public IEnumerable<SaleOrders> saleOrders { get; set; }
+        public IEnumerable<PurchaseOrders> purchaseOrders { get; set; }
     }
 }
