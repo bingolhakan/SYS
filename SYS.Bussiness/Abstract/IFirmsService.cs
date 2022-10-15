@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SYS.Bussiness.Abstract
 {
-    public interface IFirmService
+    public interface IFirmsService
     {
         List<Firms> GetAll();
         Firms GetById(int id);

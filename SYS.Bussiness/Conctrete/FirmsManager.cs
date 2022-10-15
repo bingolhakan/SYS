@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SYS.Bussiness.Conctrete
 {
-    public class FirmsManager : IFirmService
+    public class FirmsManager : IFirmsService
     {
         EfFirmsDal _firmsdal = new EfFirmsDal(); 
         public void Add(Firms firms)
