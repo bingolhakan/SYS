@@ -21,14 +21,11 @@ namespace SYS.Entities.Concrete
         public DateTime RevisedDeliveryDate { get; set; }
         public bool IsDelete { get; set; }
 
-        public Firms firms { get; set; }
         public int FirmID { get; set; }
         public Employees employees { get; set; }
         public int EmployeeID { get; set; }
         public Stocks stocks { get; set; }
         public int StockID { get; set; }
         public Currencies currencies { get; set; }
-        public int CurrencyID { get; set; }
-
     }
 }

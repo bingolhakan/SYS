@@ -17,15 +17,6 @@ namespace SYS.WinFormUI
 
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
-
-        private void kULLANICITANIMLARIToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form_users form = new Form_users();
-            form.Show();
-        }
     }
 }

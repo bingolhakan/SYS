@@ -21,7 +21,6 @@ namespace SYS.Entities.Concrete
         public bool IsDelete { get; set; }
 
         public Countries countries { get; set; }
-        public int CountryID { get; set; }
 
         public IEnumerable<Users> users { get; set; }
         public IEnumerable<SaleOrders> saleOrders { get; set; }
