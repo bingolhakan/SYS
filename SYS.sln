@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SYS.Entities", "SYS.Entities\SYS.Entities.csproj", "{D5F88EE4-E266-4338-8CAB-C353106A11D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SYS.Entities", "SYS.Entities\SYS.Entities.csproj", "{D5F88EE4-E266-4338-8CAB-C353106A11D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SYS.Dal", "SYS.Dal\SYS.Dal.csproj", "{5A476E3A-97A4-42C1-9506-2CB70C6CB2EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SYS.Dal", "SYS.Dal\SYS.Dal.csproj", "{5A476E3A-97A4-42C1-9506-2CB70C6CB2EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SYS.Bussiness", "SYS.Bussiness\SYS.Bussiness.csproj", "{2F7BFC39-1F95-4213-8A73-420D9BC95004}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SYS.Bussiness", "SYS.Bussiness\SYS.Bussiness.csproj", "{2F7BFC39-1F95-4213-8A73-420D9BC95004}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SYS.WinFormUI", "SYS.WinFormUI\SYS.WinFormUI.csproj", "{7881F116-B926-426C-B236-772738D5F53C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SYS.WinFormUI", "SYS.WinFormUI\SYS.WinFormUI.csproj", "{7881F116-B926-426C-B236-772738D5F53C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

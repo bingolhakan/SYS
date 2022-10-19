@@ -28,170 +28,272 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.sİSTEMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kULLANICITANIMLARIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.sYSTEMSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uSERACCOUNTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cOUNTRIESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cURRENCIESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fİNANCEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fİRMACCOUNTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sTOCKSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sTOCKSToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pURCHASINGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pURCHASEORDERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sALESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sALEORDERSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eMPLOYEEACCOUNTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eXITToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox_login = new System.Windows.Forms.GroupBox();
             this.button_entry = new System.Windows.Forms.Button();
-            this.label_userPassword = new System.Windows.Forms.Label();
-            this.label_userName = new System.Windows.Forms.Label();
-            this.textBox_kullaniciSifresi = new System.Windows.Forms.TextBox();
-            this.textBox_kullaniciAdi = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.textBox_password = new System.Windows.Forms.TextBox();
+            this.textBox_userName = new System.Windows.Forms.TextBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel_userName = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.groupBox_login.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.BackgroundImage = global::SYS.WinFormUI.Properties.Resources.Background_Full_HD_Images;
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.menuStrip1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, -1);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.10697F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 79.36025F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.532774F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 452);
-            this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
-            this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sİSTEMToolStripMenuItem});
+            this.sYSTEMSToolStripMenuItem,
+            this.fİNANCEToolStripMenuItem,
+            this.sTOCKSToolStripMenuItem,
+            this.pURCHASINGToolStripMenuItem,
+            this.sALESToolStripMenuItem,
+            this.hRToolStripMenuItem,
+            this.eXITToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // sİSTEMToolStripMenuItem
+            // sYSTEMSToolStripMenuItem
             // 
-            this.sİSTEMToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.kULLANICITANIMLARIToolStripMenuItem});
-            this.sİSTEMToolStripMenuItem.Name = "sİSTEMToolStripMenuItem";
-            this.sİSTEMToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
-            this.sİSTEMToolStripMenuItem.Text = "SİSTEM";
+            this.sYSTEMSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.uSERACCOUNTToolStripMenuItem,
+            this.cOUNTRIESToolStripMenuItem,
+            this.cURRENCIESToolStripMenuItem});
+            this.sYSTEMSToolStripMenuItem.Name = "sYSTEMSToolStripMenuItem";
+            this.sYSTEMSToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
+            this.sYSTEMSToolStripMenuItem.Text = "SYSTEMS";
             // 
-            // kULLANICITANIMLARIToolStripMenuItem
+            // uSERACCOUNTToolStripMenuItem
             // 
-            this.kULLANICITANIMLARIToolStripMenuItem.Name = "kULLANICITANIMLARIToolStripMenuItem";
-            this.kULLANICITANIMLARIToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
-            this.kULLANICITANIMLARIToolStripMenuItem.Text = "KULLANICI TANIMLARI";
-            this.kULLANICITANIMLARIToolStripMenuItem.Click += new System.EventHandler(this.kULLANICITANIMLARIToolStripMenuItem_Click);
+            this.uSERACCOUNTToolStripMenuItem.Name = "uSERACCOUNTToolStripMenuItem";
+            this.uSERACCOUNTToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
+            this.uSERACCOUNTToolStripMenuItem.Text = "USER ACCOUNT";
+            this.uSERACCOUNTToolStripMenuItem.Click += new System.EventHandler(this.uSERACCOUNTToolStripMenuItem_Click);
             // 
-            // groupBox1
+            // cOUNTRIESToolStripMenuItem
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.button_entry);
-            this.groupBox1.Controls.Add(this.label_userPassword);
-            this.groupBox1.Controls.Add(this.label_userName);
-            this.groupBox1.Controls.Add(this.textBox_kullaniciSifresi);
-            this.groupBox1.Controls.Add(this.textBox_kullaniciAdi);
-            this.groupBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(229, 180);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(342, 160);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Kullanıcı Bilgileri";
+            this.cOUNTRIESToolStripMenuItem.Name = "cOUNTRIESToolStripMenuItem";
+            this.cOUNTRIESToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
+            this.cOUNTRIESToolStripMenuItem.Text = "COUNTRIES";
+            this.cOUNTRIESToolStripMenuItem.Click += new System.EventHandler(this.cOUNTRIESToolStripMenuItem_Click);
+            // 
+            // cURRENCIESToolStripMenuItem
+            // 
+            this.cURRENCIESToolStripMenuItem.Name = "cURRENCIESToolStripMenuItem";
+            this.cURRENCIESToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
+            this.cURRENCIESToolStripMenuItem.Text = "CURRENCIES";
+            this.cURRENCIESToolStripMenuItem.Click += new System.EventHandler(this.cURRENCIESToolStripMenuItem_Click);
+            // 
+            // fİNANCEToolStripMenuItem
+            // 
+            this.fİNANCEToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fİRMACCOUNTToolStripMenuItem});
+            this.fİNANCEToolStripMenuItem.Name = "fİNANCEToolStripMenuItem";
+            this.fİNANCEToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
+            this.fİNANCEToolStripMenuItem.Text = "FİNANCE";
+            // 
+            // fİRMACCOUNTToolStripMenuItem
+            // 
+            this.fİRMACCOUNTToolStripMenuItem.Name = "fİRMACCOUNTToolStripMenuItem";
+            this.fİRMACCOUNTToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.fİRMACCOUNTToolStripMenuItem.Text = "FİRM ACCOUNT";
+            this.fİRMACCOUNTToolStripMenuItem.Click += new System.EventHandler(this.fİRMACCOUNTToolStripMenuItem_Click);
+            // 
+            // sTOCKSToolStripMenuItem
+            // 
+            this.sTOCKSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sTOCKSToolStripMenuItem1});
+            this.sTOCKSToolStripMenuItem.Name = "sTOCKSToolStripMenuItem";
+            this.sTOCKSToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.sTOCKSToolStripMenuItem.Text = "STOCKS";
+            this.sTOCKSToolStripMenuItem.Click += new System.EventHandler(this.sTOCKSToolStripMenuItem_Click);
+            // 
+            // sTOCKSToolStripMenuItem1
+            // 
+            this.sTOCKSToolStripMenuItem1.Name = "sTOCKSToolStripMenuItem1";
+            this.sTOCKSToolStripMenuItem1.Size = new System.Drawing.Size(144, 26);
+            this.sTOCKSToolStripMenuItem1.Text = "STOCKS";
+            this.sTOCKSToolStripMenuItem1.Click += new System.EventHandler(this.sTOCKSToolStripMenuItem1_Click);
+            // 
+            // pURCHASINGToolStripMenuItem
+            // 
+            this.pURCHASINGToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pURCHASEORDERToolStripMenuItem});
+            this.pURCHASINGToolStripMenuItem.Name = "pURCHASINGToolStripMenuItem";
+            this.pURCHASINGToolStripMenuItem.Size = new System.Drawing.Size(113, 24);
+            this.pURCHASINGToolStripMenuItem.Text = "PURCHASING";
+            // 
+            // pURCHASEORDERToolStripMenuItem
+            // 
+            this.pURCHASEORDERToolStripMenuItem.Name = "pURCHASEORDERToolStripMenuItem";
+            this.pURCHASEORDERToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
+            this.pURCHASEORDERToolStripMenuItem.Text = "PURCHASE ORDERS";
+            // 
+            // sALESToolStripMenuItem
+            // 
+            this.sALESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sALEORDERSToolStripMenuItem});
+            this.sALESToolStripMenuItem.Name = "sALESToolStripMenuItem";
+            this.sALESToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
+            this.sALESToolStripMenuItem.Text = "SALES";
+            // 
+            // sALEORDERSToolStripMenuItem
+            // 
+            this.sALEORDERSToolStripMenuItem.Name = "sALEORDERSToolStripMenuItem";
+            this.sALEORDERSToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.sALEORDERSToolStripMenuItem.Text = "SALE ORDERS";
+            // 
+            // hRToolStripMenuItem
+            // 
+            this.hRToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eMPLOYEEACCOUNTToolStripMenuItem});
+            this.hRToolStripMenuItem.Name = "hRToolStripMenuItem";
+            this.hRToolStripMenuItem.Size = new System.Drawing.Size(43, 24);
+            this.hRToolStripMenuItem.Text = "HR";
+            // 
+            // eMPLOYEEACCOUNTToolStripMenuItem
+            // 
+            this.eMPLOYEEACCOUNTToolStripMenuItem.Name = "eMPLOYEEACCOUNTToolStripMenuItem";
+            this.eMPLOYEEACCOUNTToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
+            this.eMPLOYEEACCOUNTToolStripMenuItem.Text = "EMPLOYEE ACCOUNT";
+            this.eMPLOYEEACCOUNTToolStripMenuItem.Click += new System.EventHandler(this.eMPLOYEEACCOUNTToolStripMenuItem_Click);
+            // 
+            // eXITToolStripMenuItem
+            // 
+            this.eXITToolStripMenuItem.Name = "eXITToolStripMenuItem";
+            this.eXITToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
+            this.eXITToolStripMenuItem.Text = "EXIT";
+            this.eXITToolStripMenuItem.Click += new System.EventHandler(this.eXITToolStripMenuItem_Click);
+            // 
+            // groupBox_login
+            // 
+            this.groupBox_login.Controls.Add(this.button_entry);
+            this.groupBox_login.Controls.Add(this.textBox_password);
+            this.groupBox_login.Controls.Add(this.textBox_userName);
+            this.groupBox_login.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox_login.Location = new System.Drawing.Point(265, 134);
+            this.groupBox_login.Name = "groupBox_login";
+            this.groupBox_login.Size = new System.Drawing.Size(250, 201);
+            this.groupBox_login.TabIndex = 1;
+            this.groupBox_login.TabStop = false;
+            this.groupBox_login.Text = "LOGİN";
             // 
             // button_entry
             // 
-            this.button_entry.Location = new System.Drawing.Point(200, 108);
+            this.button_entry.Location = new System.Drawing.Point(77, 147);
             this.button_entry.Name = "button_entry";
-            this.button_entry.Size = new System.Drawing.Size(112, 37);
-            this.button_entry.TabIndex = 4;
-            this.button_entry.Text = "Giriş";
+            this.button_entry.Size = new System.Drawing.Size(94, 48);
+            this.button_entry.TabIndex = 2;
+            this.button_entry.Text = "Entry";
             this.button_entry.UseVisualStyleBackColor = true;
+            this.button_entry.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label_userPassword
+            // textBox_password
             // 
-            this.label_userPassword.AutoSize = true;
-            this.label_userPassword.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label_userPassword.Location = new System.Drawing.Point(22, 76);
-            this.label_userPassword.Name = "label_userPassword";
-            this.label_userPassword.Size = new System.Drawing.Size(44, 19);
-            this.label_userPassword.TabIndex = 3;
-            this.label_userPassword.Text = "Şifre";
+            this.textBox_password.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox_password.Location = new System.Drawing.Point(6, 103);
+            this.textBox_password.Name = "textBox_password";
+            this.textBox_password.Size = new System.Drawing.Size(238, 38);
+            this.textBox_password.TabIndex = 1;
+            this.textBox_password.Text = "Password";
             // 
-            // label_userName
+            // textBox_userName
             // 
-            this.label_userName.AutoSize = true;
-            this.label_userName.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label_userName.Location = new System.Drawing.Point(22, 44);
-            this.label_userName.Name = "label_userName";
-            this.label_userName.Size = new System.Drawing.Size(123, 19);
-            this.label_userName.TabIndex = 2;
-            this.label_userName.Text = "Kullanıcı Adınız";
+            this.textBox_userName.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox_userName.Location = new System.Drawing.Point(6, 59);
+            this.textBox_userName.Name = "textBox_userName";
+            this.textBox_userName.Size = new System.Drawing.Size(238, 38);
+            this.textBox_userName.TabIndex = 0;
+            this.textBox_userName.Text = "User Name";
             // 
-            // textBox_kullaniciSifresi
+            // statusStrip1
             // 
-            this.textBox_kullaniciSifresi.Location = new System.Drawing.Point(151, 72);
-            this.textBox_kullaniciSifresi.Name = "textBox_kullaniciSifresi";
-            this.textBox_kullaniciSifresi.Size = new System.Drawing.Size(161, 30);
-            this.textBox_kullaniciSifresi.TabIndex = 1;
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel_userName});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 424);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(800, 26);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
             // 
-            // textBox_kullaniciAdi
+            // toolStripStatusLabel_userName
             // 
-            this.textBox_kullaniciAdi.Location = new System.Drawing.Point(151, 40);
-            this.textBox_kullaniciAdi.Name = "textBox_kullaniciAdi";
-            this.textBox_kullaniciAdi.Size = new System.Drawing.Size(162, 30);
-            this.textBox_kullaniciAdi.TabIndex = 0;
+            this.toolStripStatusLabel_userName.Name = "toolStripStatusLabel_userName";
+            this.toolStripStatusLabel_userName.Size = new System.Drawing.Size(151, 20);
+            this.toolStripStatusLabel_userName.Text = "toolStripStatusLabel1";
+            this.toolStripStatusLabel_userName.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::SYS.WinFormUI.Properties.Resources.Background_Full_HD_Images;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.groupBox_login);
+            this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Main";
-            this.Text = "Menü";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBox_login.ResumeLayout(false);
+            this.groupBox_login.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private NotifyIcon notifyIcon1;
-        private TableLayoutPanel tableLayoutPanel1;
+
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem sİSTEMToolStripMenuItem;
-        private GroupBox groupBox1;
-        private TextBox textBox_kullaniciSifresi;
-        private TextBox textBox_kullaniciAdi;
-        private Label label_userPassword;
-        private Label label_userName;
+        private ToolStripMenuItem sYSTEMSToolStripMenuItem;
+        private ToolStripMenuItem uSERACCOUNTToolStripMenuItem;
+        private ToolStripMenuItem fİNANCEToolStripMenuItem;
+        private ToolStripMenuItem sTOCKSToolStripMenuItem;
+        private ToolStripMenuItem pURCHASINGToolStripMenuItem;
+        private ToolStripMenuItem sALESToolStripMenuItem;
+        private ToolStripMenuItem hRToolStripMenuItem;
+        private ToolStripMenuItem eXITToolStripMenuItem;
+        private ToolStripMenuItem eMPLOYEEACCOUNTToolStripMenuItem;
+        private ToolStripMenuItem fİRMACCOUNTToolStripMenuItem;
+        private ToolStripMenuItem sTOCKSToolStripMenuItem1;
+        private ToolStripMenuItem pURCHASEORDERToolStripMenuItem;
+        private ToolStripMenuItem sALEORDERSToolStripMenuItem;
+        private ToolStripMenuItem cOUNTRIESToolStripMenuItem;
+        private ToolStripMenuItem cURRENCIESToolStripMenuItem;
+        private GroupBox groupBox_login;
         private Button button_entry;
-        private ToolStripMenuItem kULLANICITANIMLARIToolStripMenuItem;
+        private TextBox textBox_password;
+        private TextBox textBox_userName;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel toolStripStatusLabel_userName;
     }
 }

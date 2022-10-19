@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView_user = new System.Windows.Forms.DataGridView();
             this.button_ınsert = new System.Windows.Forms.Button();
             this.button_delete = new System.Windows.Forms.Button();
             this.button_update = new System.Windows.Forms.Button();
@@ -41,21 +41,25 @@
             this.label_surname = new System.Windows.Forms.Label();
             this.textBox_surname = new System.Windows.Forms.TextBox();
             this.label_email = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox_email = new System.Windows.Forms.TextBox();
             this.label_password = new System.Windows.Forms.Label();
             this.label_userId = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.richTextBox_search = new System.Windows.Forms.RichTextBox();
+            this.label_employeeID = new System.Windows.Forms.Label();
+            this.comboBox_employeeID = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_user)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridView_user
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 90);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 309);
-            this.dataGridView1.TabIndex = 14;
+            this.dataGridView_user.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_user.Location = new System.Drawing.Point(12, 120);
+            this.dataGridView_user.Name = "dataGridView_user";
+            this.dataGridView_user.RowHeadersWidth = 51;
+            this.dataGridView_user.RowTemplate.Height = 29;
+            this.dataGridView_user.Size = new System.Drawing.Size(776, 279);
+            this.dataGridView_user.TabIndex = 14;
+            this.dataGridView_user.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_user_CellClick);
             // 
             // button_ınsert
             // 
@@ -67,6 +71,7 @@
             this.button_ınsert.TabIndex = 15;
             this.button_ınsert.Text = "Insert";
             this.button_ınsert.UseVisualStyleBackColor = false;
+            this.button_ınsert.Click += new System.EventHandler(this.button_ınsert_Click);
             // 
             // button_delete
             // 
@@ -78,6 +83,7 @@
             this.button_delete.TabIndex = 16;
             this.button_delete.Text = "Delete";
             this.button_delete.UseVisualStyleBackColor = false;
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
             // button_update
             // 
@@ -89,16 +95,19 @@
             this.button_update.TabIndex = 17;
             this.button_update.Text = "Update";
             this.button_update.UseVisualStyleBackColor = false;
+            this.button_update.Click += new System.EventHandler(this.button_update_Click);
             // 
             // textBox_password
             // 
             this.textBox_password.Location = new System.Drawing.Point(663, 12);
             this.textBox_password.Name = "textBox_password";
+            this.textBox_password.PasswordChar = '*';
             this.textBox_password.Size = new System.Drawing.Size(125, 27);
             this.textBox_password.TabIndex = 13;
             // 
             // textBox_userId
             // 
+            this.textBox_userId.Enabled = false;
             this.textBox_userId.Location = new System.Drawing.Point(112, 12);
             this.textBox_userId.Name = "textBox_userId";
             this.textBox_userId.Size = new System.Drawing.Size(125, 27);
@@ -167,12 +176,12 @@
             this.label_email.TabIndex = 8;
             this.label_email.Text = "e-mail";
             // 
-            // textBox4
+            // textBox_email
             // 
-            this.textBox4.Location = new System.Drawing.Point(663, 45);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(125, 27);
-            this.textBox4.TabIndex = 9;
+            this.textBox_email.Location = new System.Drawing.Point(663, 45);
+            this.textBox_email.Name = "textBox_email";
+            this.textBox_email.Size = new System.Drawing.Size(125, 27);
+            this.textBox_email.TabIndex = 9;
             // 
             // label_password
             // 
@@ -196,19 +205,52 @@
             this.label_userId.Text = "User ID";
             this.label_userId.Click += new System.EventHandler(this.label_userId_Click);
             // 
+            // richTextBox_search
+            // 
+            this.richTextBox_search.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.richTextBox_search.Location = new System.Drawing.Point(563, 409);
+            this.richTextBox_search.Name = "richTextBox_search";
+            this.richTextBox_search.Size = new System.Drawing.Size(222, 29);
+            this.richTextBox_search.TabIndex = 18;
+            this.richTextBox_search.Text = "Search";
+            this.richTextBox_search.UseWaitCursor = true;
+            // 
+            // label_employeeID
+            // 
+            this.label_employeeID.AutoSize = true;
+            this.label_employeeID.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_employeeID.Location = new System.Drawing.Point(13, 86);
+            this.label_employeeID.Name = "label_employeeID";
+            this.label_employeeID.Size = new System.Drawing.Size(103, 19);
+            this.label_employeeID.TabIndex = 19;
+            this.label_employeeID.Text = "Employee ID";
+            // 
+            // comboBox_employeeID
+            // 
+            this.comboBox_employeeID.FormattingEnabled = true;
+            this.comboBox_employeeID.Location = new System.Drawing.Point(113, 82);
+            this.comboBox_employeeID.Name = "comboBox_employeeID";
+            this.comboBox_employeeID.Size = new System.Drawing.Size(124, 28);
+            this.comboBox_employeeID.TabIndex = 20;
+            this.comboBox_employeeID.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox_employeeID.MouseClick += new System.Windows.Forms.MouseEventHandler(this.comboBox_employeeID_MouseClick);
+            // 
             // Form_users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox_employeeID);
+            this.Controls.Add(this.label_employeeID);
+            this.Controls.Add(this.richTextBox_search);
             this.Controls.Add(this.label_userId);
             this.Controls.Add(this.button_update);
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.button_ınsert);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridView_user);
             this.Controls.Add(this.textBox_password);
             this.Controls.Add(this.label_password);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox_email);
             this.Controls.Add(this.label_email);
             this.Controls.Add(this.textBox_surname);
             this.Controls.Add(this.label_surname);
@@ -220,16 +262,17 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form_users";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Users";
             this.Load += new System.EventHandler(this.Form_users_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_user)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private DataGridView dataGridView1;
+        private DataGridView dataGridView_user;
         private Button button_ınsert;
         private Button button_delete;
         private Button button_update;
@@ -242,8 +285,11 @@
         private Label label_surname;
         private TextBox textBox_surname;
         private Label label_email;
-        private TextBox textBox4;
+        private TextBox textBox_email;
         private Label label_password;
         private Label label_userId;
+        private RichTextBox richTextBox_search;
+        private Label label_employeeID;
+        private ComboBox comboBox_employeeID;
     }
 }
