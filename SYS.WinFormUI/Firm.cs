@@ -42,10 +42,14 @@ namespace SYS.WinFormUI
             comboBox_countryID.DataSource = _countryManager.GetAll();
             comboBox_countryID.DisplayMember = "CountryName";
             comboBox_countryID.ValueMember = "CountryID";
+            button_delete.Enabled = false;
+            button_update.Enabled = false;
         }
 
         private void dataGridView_firm_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            button_delete.Enabled = true;
+            button_update.Enabled = true;
             textBox_firmID.Text = dataGridView_firm.CurrentRow.Cells[0].Value.ToString();
             textBox_name.Text = dataGridView_firm.CurrentRow.Cells[1].Value.ToString();
             textBox_address.Text = dataGridView_firm.CurrentRow.Cells[2].Value.ToString();
@@ -53,8 +57,15 @@ namespace SYS.WinFormUI
             textBox_city.Text = dataGridView_firm.CurrentRow.Cells[4].Value.ToString();
             textBox_taxOffice.Text = dataGridView_firm.CurrentRow.Cells[5].Value.ToString();
             textBox_taxNumber.Text = dataGridView_firm.CurrentRow.Cells[6].Value.ToString();
-            //comboBox_countryID.SelectedItem = dataGridView_firm.CurrentRow.Cells[8].Value.ToString();
-            //comboBox_firm_typeID.SelectedItem = dataGridView_firm.CurrentRow.Cells[9].Value.ToString();
+            int id1 = Convert.ToInt32(dataGridView_firm.CurrentRow.Cells[9].Value.ToString());
+            //Hata
+            comboBox_countryID.DataSource = _firm_TypeManager.GetById(id1);
+            comboBox_countryID.DisplayMember = "CountryName";
+            comboBox_countryID.ValueMember = "Firm_TypeID";
+            int id2 = Convert.ToInt32(dataGridView_firm.CurrentRow.Cells[9].Value.ToString());
+            comboBox_firm_typeID.DataSource = _firm_TypeManager.GetById(id2);
+            comboBox_firm_typeID.DisplayMember = "Description";
+            comboBox_firm_typeID.ValueMember = "CountryID";
         }
 
         private void button_ınsert_Click(object sender, EventArgs e)

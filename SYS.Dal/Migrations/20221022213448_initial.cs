@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SYS.Dal.Migrations
 {
-    public partial class İnitial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -284,6 +284,78 @@ namespace SYS.Dal.Migrations
                         onDelete: ReferentialAction.NoAction);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Stock_TransferBodies",
+                columns: table => new
+                {
+                    TansferBodyID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Input = table.Column<float>(type: "real", nullable: false),
+                    Output = table.Column<float>(type: "real", nullable: false),
+                    UnitPrice = table.Column<float>(type: "real", nullable: false),
+                    DiscountRate = table.Column<float>(type: "real", nullable: false),
+                    DiscountAmount = table.Column<float>(type: "real", nullable: false),
+                    VatRate = table.Column<float>(type: "real", nullable: false),
+                    VatAmount = table.Column<float>(type: "real", nullable: false),
+                    IsDelete = table.Column<bool>(type: "bit", nullable: false),
+                    stock_transferheaderTransferHeaderID = table.Column<int>(type: "int", nullable: false),
+                    TransferID = table.Column<int>(type: "int", nullable: false),
+                    StockID = table.Column<int>(type: "int", nullable: false),
+                    PurchaseOrderID = table.Column<int>(type: "int", nullable: false),
+                    SaleOrderID = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Stock_TransferBodies", x => x.TansferBodyID);
+                    table.ForeignKey(
+                        name: "FK_Stock_TransferBodies_Purchaseorders_PurchaseOrderID",
+                        column: x => x.PurchaseOrderID,
+                        principalTable: "Purchaseorders",
+                        principalColumn: "PurchaseOrderID",
+                        onDelete: ReferentialAction.NoAction);
+                    table.ForeignKey(
+                        name: "FK_Stock_TransferBodies_Saleorders_SaleOrderID",
+                        column: x => x.SaleOrderID,
+                        principalTable: "Saleorders",
+                        principalColumn: "SaleOrderID",
+                        onDelete: ReferentialAction.NoAction);
+                    table.ForeignKey(
+                        name: "FK_Stock_TransferBodies_Stocks_StockID",
+                        column: x => x.StockID,
+                        principalTable: "Stocks",
+                        principalColumn: "StockID",
+                        onDelete: ReferentialAction.NoAction);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Stock_TransferHeaders",
+                columns: table => new
+                {
+                    TransferHeaderID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Transfer_Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsDelete = table.Column<bool>(type: "bit", nullable: false),
+                    FirmID = table.Column<int>(type: "int", nullable: false),
+                    Stock_TransferBodyTansferBodyID = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Stock_TransferHeaders", x => x.TransferHeaderID);
+                    table.ForeignKey(
+                        name: "FK_Stock_TransferHeaders_Firms_FirmID",
+                        column: x => x.FirmID,
+                        principalTable: "Firms",
+                        principalColumn: "FirmID",
+                        onDelete: ReferentialAction.NoAction);
+                    table.ForeignKey(
+                        name: "FK_Stock_TransferHeaders_Stock_TransferBodies_Stock_TransferBodyTansferBodyID",
+                        column: x => x.Stock_TransferBodyTansferBodyID,
+                        principalTable: "Stock_TransferBodies",
+                        principalColumn: "TansferBodyID");
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Employees_CountryID",
                 table: "Employees",
@@ -340,6 +412,36 @@ namespace SYS.Dal.Migrations
                 column: "StockID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Stock_TransferBodies_PurchaseOrderID",
+                table: "Stock_TransferBodies",
+                column: "PurchaseOrderID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Stock_TransferBodies_SaleOrderID",
+                table: "Stock_TransferBodies",
+                column: "SaleOrderID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Stock_TransferBodies_stock_transferheaderTransferHeaderID",
+                table: "Stock_TransferBodies",
+                column: "stock_transferheaderTransferHeaderID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Stock_TransferBodies_StockID",
+                table: "Stock_TransferBodies",
+                column: "StockID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Stock_TransferHeaders_FirmID",
+                table: "Stock_TransferHeaders",
+                column: "FirmID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Stock_TransferHeaders_Stock_TransferBodyTansferBodyID",
+                table: "Stock_TransferHeaders",
+                column: "Stock_TransferBodyTansferBodyID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Stocks_CurrencyID",
                 table: "Stocks",
                 column: "CurrencyID");
@@ -353,27 +455,91 @@ namespace SYS.Dal.Migrations
                 name: "IX_Users_EmployeeID",
                 table: "Users",
                 column: "EmployeeID");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Stock_TransferBodies_Stock_TransferHeaders_stock_transferheaderTransferHeaderID",
+                table: "Stock_TransferBodies",
+                column: "stock_transferheaderTransferHeaderID",
+                principalTable: "Stock_TransferHeaders",
+                principalColumn: "TransferHeaderID",
+                onDelete: ReferentialAction.NoAction);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Purchaseorders");
+            migrationBuilder.DropForeignKey(
+                name: "FK_Employees_Countries_CountryID",
+                table: "Employees");
 
-            migrationBuilder.DropTable(
-                name: "Saleorders");
+            migrationBuilder.DropForeignKey(
+                name: "FK_Firms_Countries_CountryID",
+                table: "Firms");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Firms_Firm_types_Firm_TypeID",
+                table: "Firms");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Purchaseorders_Currencies_CurrencyID",
+                table: "Purchaseorders");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Saleorders_Currencies_CurrencyID",
+                table: "Saleorders");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Stocks_Currencies_CurrencyID",
+                table: "Stocks");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Purchaseorders_Employees_EmployeeID",
+                table: "Purchaseorders");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Saleorders_Employees_EmployeeID",
+                table: "Saleorders");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Purchaseorders_Firms_FirmID",
+                table: "Purchaseorders");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Saleorders_Firms_FirmID",
+                table: "Saleorders");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Stock_TransferHeaders_Firms_FirmID",
+                table: "Stock_TransferHeaders");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Purchaseorders_Stocks_StockID",
+                table: "Purchaseorders");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Saleorders_Stocks_StockID",
+                table: "Saleorders");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Stock_TransferBodies_Stocks_StockID",
+                table: "Stock_TransferBodies");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Stock_TransferBodies_Purchaseorders_PurchaseOrderID",
+                table: "Stock_TransferBodies");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Stock_TransferBodies_Saleorders_SaleOrderID",
+                table: "Stock_TransferBodies");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Stock_TransferBodies_Stock_TransferHeaders_stock_transferheaderTransferHeaderID",
+                table: "Stock_TransferBodies");
 
             migrationBuilder.DropTable(
                 name: "Users");
 
             migrationBuilder.DropTable(
-                name: "Firms");
-
-            migrationBuilder.DropTable(
-                name: "Stocks");
-
-            migrationBuilder.DropTable(
-                name: "Employees");
+                name: "Countries");
 
             migrationBuilder.DropTable(
                 name: "Firm_types");
@@ -382,10 +548,28 @@ namespace SYS.Dal.Migrations
                 name: "Currencies");
 
             migrationBuilder.DropTable(
+                name: "Employees");
+
+            migrationBuilder.DropTable(
+                name: "Firms");
+
+            migrationBuilder.DropTable(
+                name: "Stocks");
+
+            migrationBuilder.DropTable(
                 name: "Stock_Units");
 
             migrationBuilder.DropTable(
-                name: "Countries");
+                name: "Purchaseorders");
+
+            migrationBuilder.DropTable(
+                name: "Saleorders");
+
+            migrationBuilder.DropTable(
+                name: "Stock_TransferHeaders");
+
+            migrationBuilder.DropTable(
+                name: "Stock_TransferBodies");
         }
     }
 }

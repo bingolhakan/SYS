@@ -359,6 +359,102 @@ namespace SYS.Dal.Migrations
                     b.ToTable("Stocks");
                 });
 
+            modelBuilder.Entity("SYS.Entities.Concrete.Stock_TransferBody", b =>
+                {
+                    b.Property<int>("TansferBodyID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TansferBodyID"), 1L, 1);
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<float>("DiscountAmount")
+                        .HasColumnType("real");
+
+                    b.Property<float>("DiscountRate")
+                        .HasColumnType("real");
+
+                    b.Property<float>("Input")
+                        .HasColumnType("real");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<float>("Output")
+                        .HasColumnType("real");
+
+                    b.Property<int>("PurchaseOrderID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SaleOrderID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StockID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TransferID")
+                        .HasColumnType("int");
+
+                    b.Property<float>("UnitPrice")
+                        .HasColumnType("real");
+
+                    b.Property<float>("VatAmount")
+                        .HasColumnType("real");
+
+                    b.Property<float>("VatRate")
+                        .HasColumnType("real");
+
+                    b.Property<int>("stock_transferheaderTransferHeaderID")
+                        .HasColumnType("int");
+
+                    b.HasKey("TansferBodyID");
+
+                    b.HasIndex("PurchaseOrderID");
+
+                    b.HasIndex("SaleOrderID");
+
+                    b.HasIndex("StockID");
+
+                    b.HasIndex("stock_transferheaderTransferHeaderID");
+
+                    b.ToTable("Stock_TransferBodies");
+                });
+
+            modelBuilder.Entity("SYS.Entities.Concrete.Stock_TransferHeader", b =>
+                {
+                    b.Property<int>("TransferHeaderID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TransferHeaderID"), 1L, 1);
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("FirmID")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("Stock_TransferBodyTansferBodyID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Transfer_Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TransferHeaderID");
+
+                    b.HasIndex("FirmID");
+
+                    b.HasIndex("Stock_TransferBodyTansferBodyID");
+
+                    b.ToTable("Stock_TransferHeaders");
+                });
+
             modelBuilder.Entity("SYS.Entities.Concrete.Stock_Unit", b =>
                 {
                     b.Property<int>("Stock_UnitID")
@@ -379,7 +475,7 @@ namespace SYS.Dal.Migrations
                     b.ToTable("Stock_Units");
                 });
 
-            modelBuilder.Entity("SYS.Entities.Concrete.User", b =>
+            modelBuilder.Entity("SYS.Entities.Concrete.Users", b =>
                 {
                     b.Property<int>("UserID")
                         .ValueGeneratedOnAdd()
@@ -539,7 +635,57 @@ namespace SYS.Dal.Migrations
                     b.Navigation("stock_unit");
                 });
 
-            modelBuilder.Entity("SYS.Entities.Concrete.User", b =>
+            modelBuilder.Entity("SYS.Entities.Concrete.Stock_TransferBody", b =>
+                {
+                    b.HasOne("SYS.Entities.Concrete.PurchaseOrder", "purchaseorder")
+                        .WithMany()
+                        .HasForeignKey("PurchaseOrderID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SYS.Entities.Concrete.SaleOrder", "saleorder")
+                        .WithMany()
+                        .HasForeignKey("SaleOrderID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SYS.Entities.Concrete.Stock", "stock")
+                        .WithMany("Stock_TransferBodies")
+                        .HasForeignKey("StockID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SYS.Entities.Concrete.Stock_TransferHeader", "stock_transferheader")
+                        .WithMany()
+                        .HasForeignKey("stock_transferheaderTransferHeaderID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("purchaseorder");
+
+                    b.Navigation("saleorder");
+
+                    b.Navigation("stock");
+
+                    b.Navigation("stock_transferheader");
+                });
+
+            modelBuilder.Entity("SYS.Entities.Concrete.Stock_TransferHeader", b =>
+                {
+                    b.HasOne("SYS.Entities.Concrete.Firm", "firms")
+                        .WithMany("Stock_TransferHeaders")
+                        .HasForeignKey("FirmID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SYS.Entities.Concrete.Stock_TransferBody", null)
+                        .WithMany("stock_transferheaders")
+                        .HasForeignKey("Stock_TransferBodyTansferBodyID");
+
+                    b.Navigation("firms");
+                });
+
+            modelBuilder.Entity("SYS.Entities.Concrete.Users", b =>
                 {
                     b.HasOne("SYS.Entities.Concrete.Employee", "employee")
                         .WithMany("Users")
@@ -580,6 +726,8 @@ namespace SYS.Dal.Migrations
                     b.Navigation("Purchaseorders");
 
                     b.Navigation("Saleorders");
+
+                    b.Navigation("Stock_TransferHeaders");
                 });
 
             modelBuilder.Entity("SYS.Entities.Concrete.Firm_Type", b =>
@@ -592,6 +740,13 @@ namespace SYS.Dal.Migrations
                     b.Navigation("Purchaseorders");
 
                     b.Navigation("Saleorders");
+
+                    b.Navigation("Stock_TransferBodies");
+                });
+
+            modelBuilder.Entity("SYS.Entities.Concrete.Stock_TransferBody", b =>
+                {
+                    b.Navigation("stock_transferheaders");
                 });
 
             modelBuilder.Entity("SYS.Entities.Concrete.Stock_Unit", b =>

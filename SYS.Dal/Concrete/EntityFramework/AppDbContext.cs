@@ -20,6 +20,8 @@ namespace SYS.Dal.Conctrete.EntityFramework
         public DbSet<Stock_Unit> Stock_Units { get; set; }
         public DbSet<Stock> Stocks { get; set; }
         public DbSet<Users> Users { get; set; }
+        public DbSet<Stock_TransferBody> Stock_TransferBodies { get; set; }
+        public DbSet<Stock_TransferHeader> Stock_TransferHeaders { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

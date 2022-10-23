@@ -120,5 +120,10 @@ namespace SYS.WinFormUI
             }
             dataGridView_user.Refresh();
         }
+
+        private void dataGridView_user_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

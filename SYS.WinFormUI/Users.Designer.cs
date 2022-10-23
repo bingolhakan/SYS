@@ -60,6 +60,7 @@
             this.dataGridView_user.Size = new System.Drawing.Size(776, 279);
             this.dataGridView_user.TabIndex = 14;
             this.dataGridView_user.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_user_CellClick);
+            this.dataGridView_user.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_user_CellContentClick);
             // 
             // button_ınsert
             // 

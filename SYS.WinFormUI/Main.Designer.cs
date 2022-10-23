@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.sYSTEMSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uSERACCOUNTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOUNTRIESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cURRENCIESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fİRMTYPEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fİNANCEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fİRMACCOUNTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sTOCKSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sTOCKSToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tRANSFERSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pURCHASINGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pURCHASEORDERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sALESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,15 +52,15 @@
             this.textBox_userName = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel_userName = new System.Windows.Forms.ToolStripStatusLabel();
-            this.menuStrip1.SuspendLayout();
+            this.menuStrip.SuspendLayout();
             this.groupBox_login.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // menuStrip
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sYSTEMSToolStripMenuItem,
             this.fİNANCEToolStripMenuItem,
             this.sTOCKSToolStripMenuItem,
@@ -66,18 +68,19 @@
             this.sALESToolStripMenuItem,
             this.hRToolStripMenuItem,
             this.eXITToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip.TabIndex = 0;
+            this.menuStrip.Text = "menuStrip1";
             // 
             // sYSTEMSToolStripMenuItem
             // 
             this.sYSTEMSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.uSERACCOUNTToolStripMenuItem,
             this.cOUNTRIESToolStripMenuItem,
-            this.cURRENCIESToolStripMenuItem});
+            this.cURRENCIESToolStripMenuItem,
+            this.fİRMTYPEToolStripMenuItem});
             this.sYSTEMSToolStripMenuItem.Name = "sYSTEMSToolStripMenuItem";
             this.sYSTEMSToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.sYSTEMSToolStripMenuItem.Text = "SYSTEMS";
@@ -85,23 +88,30 @@
             // uSERACCOUNTToolStripMenuItem
             // 
             this.uSERACCOUNTToolStripMenuItem.Name = "uSERACCOUNTToolStripMenuItem";
-            this.uSERACCOUNTToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
-            this.uSERACCOUNTToolStripMenuItem.Text = "USER ACCOUNT";
+            this.uSERACCOUNTToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
+            this.uSERACCOUNTToolStripMenuItem.Text = "USER ACCOUNTS";
             this.uSERACCOUNTToolStripMenuItem.Click += new System.EventHandler(this.uSERACCOUNTToolStripMenuItem_Click);
             // 
             // cOUNTRIESToolStripMenuItem
             // 
             this.cOUNTRIESToolStripMenuItem.Name = "cOUNTRIESToolStripMenuItem";
-            this.cOUNTRIESToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
-            this.cOUNTRIESToolStripMenuItem.Text = "COUNTRIES";
+            this.cOUNTRIESToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
+            this.cOUNTRIESToolStripMenuItem.Text = "COUNTRY DEFINITIONS";
             this.cOUNTRIESToolStripMenuItem.Click += new System.EventHandler(this.cOUNTRIESToolStripMenuItem_Click);
             // 
             // cURRENCIESToolStripMenuItem
             // 
             this.cURRENCIESToolStripMenuItem.Name = "cURRENCIESToolStripMenuItem";
-            this.cURRENCIESToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
-            this.cURRENCIESToolStripMenuItem.Text = "CURRENCIES";
+            this.cURRENCIESToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
+            this.cURRENCIESToolStripMenuItem.Text = "CURRENCY DEFINITIONS";
             this.cURRENCIESToolStripMenuItem.Click += new System.EventHandler(this.cURRENCIESToolStripMenuItem_Click);
+            // 
+            // fİRMTYPEToolStripMenuItem
+            // 
+            this.fİRMTYPEToolStripMenuItem.Name = "fİRMTYPEToolStripMenuItem";
+            this.fİRMTYPEToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
+            this.fİRMTYPEToolStripMenuItem.Text = "FİRM TYPE DEFINITIONS";
+            this.fİRMTYPEToolStripMenuItem.Click += new System.EventHandler(this.fİRMTYPEToolStripMenuItem_Click);
             // 
             // fİNANCEToolStripMenuItem
             // 
@@ -114,25 +124,32 @@
             // fİRMACCOUNTToolStripMenuItem
             // 
             this.fİRMACCOUNTToolStripMenuItem.Name = "fİRMACCOUNTToolStripMenuItem";
-            this.fİRMACCOUNTToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.fİRMACCOUNTToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
             this.fİRMACCOUNTToolStripMenuItem.Text = "FİRM ACCOUNT";
             this.fİRMACCOUNTToolStripMenuItem.Click += new System.EventHandler(this.fİRMACCOUNTToolStripMenuItem_Click);
             // 
             // sTOCKSToolStripMenuItem
             // 
             this.sTOCKSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sTOCKSToolStripMenuItem1});
+            this.sTOCKSToolStripMenuItem1,
+            this.tRANSFERSToolStripMenuItem});
             this.sTOCKSToolStripMenuItem.Name = "sTOCKSToolStripMenuItem";
             this.sTOCKSToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
             this.sTOCKSToolStripMenuItem.Text = "STOCKS";
-            this.sTOCKSToolStripMenuItem.Click += new System.EventHandler(this.sTOCKSToolStripMenuItem_Click);
             // 
             // sTOCKSToolStripMenuItem1
             // 
             this.sTOCKSToolStripMenuItem1.Name = "sTOCKSToolStripMenuItem1";
-            this.sTOCKSToolStripMenuItem1.Size = new System.Drawing.Size(144, 26);
+            this.sTOCKSToolStripMenuItem1.Size = new System.Drawing.Size(170, 26);
             this.sTOCKSToolStripMenuItem1.Text = "STOCKS";
             this.sTOCKSToolStripMenuItem1.Click += new System.EventHandler(this.sTOCKSToolStripMenuItem1_Click);
+            // 
+            // tRANSFERSToolStripMenuItem
+            // 
+            this.tRANSFERSToolStripMenuItem.Name = "tRANSFERSToolStripMenuItem";
+            this.tRANSFERSToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
+            this.tRANSFERSToolStripMenuItem.Text = "TRANSFERS";
+            this.tRANSFERSToolStripMenuItem.Click += new System.EventHandler(this.tRANSFERSToolStripMenuItem_Click);
             // 
             // pURCHASINGToolStripMenuItem
             // 
@@ -147,6 +164,7 @@
             this.pURCHASEORDERToolStripMenuItem.Name = "pURCHASEORDERToolStripMenuItem";
             this.pURCHASEORDERToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
             this.pURCHASEORDERToolStripMenuItem.Text = "PURCHASE ORDERS";
+            this.pURCHASEORDERToolStripMenuItem.Click += new System.EventHandler(this.pURCHASEORDERToolStripMenuItem_Click);
             // 
             // sALESToolStripMenuItem
             // 
@@ -190,38 +208,42 @@
             this.groupBox_login.Controls.Add(this.textBox_password);
             this.groupBox_login.Controls.Add(this.textBox_userName);
             this.groupBox_login.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox_login.Location = new System.Drawing.Point(265, 134);
+            this.groupBox_login.Location = new System.Drawing.Point(264, 134);
             this.groupBox_login.Name = "groupBox_login";
-            this.groupBox_login.Size = new System.Drawing.Size(250, 201);
+            this.groupBox_login.Size = new System.Drawing.Size(307, 148);
             this.groupBox_login.TabIndex = 1;
             this.groupBox_login.TabStop = false;
             this.groupBox_login.Text = "LOGİN";
             // 
             // button_entry
             // 
-            this.button_entry.Location = new System.Drawing.Point(77, 147);
+            this.button_entry.BackgroundImage = global::SYS.WinFormUI.Properties.Resources.log_in;
+            this.button_entry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_entry.Location = new System.Drawing.Point(223, 57);
             this.button_entry.Name = "button_entry";
-            this.button_entry.Size = new System.Drawing.Size(94, 48);
+            this.button_entry.Size = new System.Drawing.Size(75, 75);
             this.button_entry.TabIndex = 2;
-            this.button_entry.Text = "Entry";
             this.button_entry.UseVisualStyleBackColor = true;
-            this.button_entry.Click += new System.EventHandler(this.button1_Click);
+            this.button_entry.Click += new System.EventHandler(this.button_entry_Click);
             // 
             // textBox_password
             // 
+            this.textBox_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_password.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox_password.Location = new System.Drawing.Point(6, 103);
+            this.textBox_password.Location = new System.Drawing.Point(6, 101);
             this.textBox_password.Name = "textBox_password";
-            this.textBox_password.Size = new System.Drawing.Size(238, 38);
+            this.textBox_password.PasswordChar = '*';
+            this.textBox_password.Size = new System.Drawing.Size(211, 31);
             this.textBox_password.TabIndex = 1;
             this.textBox_password.Text = "Password";
             // 
             // textBox_userName
             // 
+            this.textBox_userName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_userName.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox_userName.Location = new System.Drawing.Point(6, 59);
+            this.textBox_userName.Location = new System.Drawing.Point(6, 57);
             this.textBox_userName.Name = "textBox_userName";
-            this.textBox_userName.Size = new System.Drawing.Size(238, 38);
+            this.textBox_userName.Size = new System.Drawing.Size(211, 31);
             this.textBox_userName.TabIndex = 0;
             this.textBox_userName.Text = "User Name";
             // 
@@ -241,7 +263,6 @@
             this.toolStripStatusLabel_userName.Name = "toolStripStatusLabel_userName";
             this.toolStripStatusLabel_userName.Size = new System.Drawing.Size(151, 20);
             this.toolStripStatusLabel_userName.Text = "toolStripStatusLabel1";
-            this.toolStripStatusLabel_userName.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // Main
             // 
@@ -251,8 +272,8 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox_login);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.menuStrip);
+            this.MainMenuStrip = this.menuStrip;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Main";
@@ -260,8 +281,8 @@
             this.Text = "Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.groupBox_login.ResumeLayout(false);
             this.groupBox_login.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -290,10 +311,13 @@
         private ToolStripMenuItem cOUNTRIESToolStripMenuItem;
         private ToolStripMenuItem cURRENCIESToolStripMenuItem;
         private GroupBox groupBox_login;
-        private Button button_entry;
         private TextBox textBox_password;
-        private TextBox textBox_userName;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripStatusLabel_userName;
+        private ToolStripMenuItem tRANSFERSToolStripMenuItem;
+        private TextBox textBox_userName;
+        private MenuStrip menuStrip;
+        private ToolStripMenuItem fİRMTYPEToolStripMenuItem;
+        public Button button_entry;
     }
 }

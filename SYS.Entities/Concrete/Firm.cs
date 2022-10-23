@@ -29,6 +29,6 @@ namespace SYS.Entities.Concrete
 
         public IEnumerable<SaleOrder> Saleorders { get; set; }
         public IEnumerable<PurchaseOrder> Purchaseorders { get; set; }
-
+        public IEnumerable<Stock_TransferHeader> Stock_TransferHeaders { get; set; }
     }
 }

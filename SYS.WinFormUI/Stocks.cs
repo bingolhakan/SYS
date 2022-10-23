@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CurrencyManager = SYS.Bussiness.Concrete.CurrencyManager;
 
 namespace SYS.WinFormUI
 {
@@ -16,61 +17,11 @@ namespace SYS.WinFormUI
     {
         StockManager _stockManager = new StockManager();
         Stock_UnitManager _stock_UnitManager = new Stock_UnitManager();
-        //CurrencyManager _currencyManager = new CurrencyManager();
+        CurrencyManager _currencyManager = new CurrencyManager();
         public Form_Stocks()
         {
             InitializeComponent();
         }
-
-        private void dataGridView_employees_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
-        private void label_Country_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox_city_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label_city_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox_district_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label_district_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void richTextBox_search_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label_employeeID_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button_update_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button_delete_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button_ınsert_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Kayıt etmek istiyormusunuz?", "Onay", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -82,7 +33,7 @@ namespace SYS.WinFormUI
                 _stock.Stock_UnitID = Int32.Parse(comboBox_stock_UnitID.SelectedValue.ToString());
                 _stock.PurchasePrice = Int32.Parse(textBox_purchasePrice.Text);
                 _stock.SalePrice = Int32.Parse(textBox_salePrice.Text);
-                _stock.CurrencyID = Int32.Parse(comboBox_currencyID.SelectedValue.ToString());
+                _stock.CurrencyID = Int32.Parse(comboBox_currencyID.SelectedText);
                 _stock.VatRate = Double.Parse(textBox_vatRate.Text);
                 _stock.DiscountRate = Double.Parse(textBox_discountRate.Text);
                 _stockManager.Add(_stock);
@@ -171,9 +122,11 @@ namespace SYS.WinFormUI
             comboBox_stock_UnitID.DataSource = _stock_UnitManager.GetAll();
             comboBox_stock_UnitID.DisplayMember = "UnitDescription";
             comboBox_stock_UnitID.ValueMember = "Stock_UnitID";
-            //comboBox_currencyID.DataSource = _currencyManager.GetAll();
+            comboBox_stock_UnitID.Text = "Seçiniz..";
+            comboBox_currencyID.DataSource = _currencyManager.GetAll();
             comboBox_currencyID.DisplayMember = "Description";
             comboBox_currencyID.ValueMember = "CurrencyID";
+            comboBox_currencyID.Text = "Seçiniz..";
         }
 
         private void textBox_discount_TextChanged(object sender, EventArgs e)

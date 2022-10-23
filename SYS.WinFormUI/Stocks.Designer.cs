@@ -51,6 +51,7 @@
             this.comboBox_currencyID = new System.Windows.Forms.ComboBox();
             this.label_currency = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.comboBox_stockID = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_stocks)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +65,6 @@
             this.label_stockID.Size = new System.Drawing.Size(72, 19);
             this.label_stockID.TabIndex = 42;
             this.label_stockID.Text = "Stock ID";
-            this.label_stockID.Click += new System.EventHandler(this.label_employeeID_Click);
             // 
             // button_update
             // 
@@ -76,7 +76,6 @@
             this.button_update.TabIndex = 57;
             this.button_update.Text = "Update";
             this.button_update.UseVisualStyleBackColor = false;
-            this.button_update.Click += new System.EventHandler(this.button_update_Click);
             // 
             // button_delete
             // 
@@ -88,7 +87,6 @@
             this.button_delete.TabIndex = 56;
             this.button_delete.Text = "Delete";
             this.button_delete.UseVisualStyleBackColor = false;
-            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
             // button_ınsert
             // 
@@ -112,7 +110,6 @@
             this.dataGridView_stocks.Size = new System.Drawing.Size(775, 188);
             this.dataGridView_stocks.TabIndex = 54;
             this.dataGridView_stocks.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_stocks_CellClick);
-            this.dataGridView_stocks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_employees_CellContentClick);
             // 
             // textBox_name2
             // 
@@ -279,11 +276,20 @@
             this.richTextBox1.TabIndex = 76;
             this.richTextBox1.Text = "Search";
             // 
+            // comboBox_stockID
+            // 
+            this.comboBox_stockID.FormattingEnabled = true;
+            this.comboBox_stockID.Location = new System.Drawing.Point(315, 7);
+            this.comboBox_stockID.Name = "comboBox_stockID";
+            this.comboBox_stockID.Size = new System.Drawing.Size(151, 28);
+            this.comboBox_stockID.TabIndex = 77;
+            // 
             // Form_Stocks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox_stockID);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.comboBox_currencyID);
             this.Controls.Add(this.label_currency);
@@ -341,5 +347,6 @@
         private ComboBox comboBox_currencyID;
         private Label label_currency;
         private RichTextBox richTextBox1;
+        private ComboBox comboBox_stockID;
     }
 }
