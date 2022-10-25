@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SYS.Dal.Conctrete.EntityFramework;
 
@@ -11,9 +12,10 @@ using SYS.Dal.Conctrete.EntityFramework;
 namespace SYS.Dal.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221025193621_25Ekim")]
+    partial class _25Ekim
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -635,13 +637,13 @@ namespace SYS.Dal.Migrations
             modelBuilder.Entity("SYS.Entities.Concrete.Stock_TransferBody", b =>
                 {
                     b.HasOne("SYS.Entities.Concrete.PurchaseOrder", "purchaseorder")
-                        .WithMany("Stock_TransferBodys")
+                        .WithMany()
                         .HasForeignKey("PurchaseOrderID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("SYS.Entities.Concrete.SaleOrder", "saleorder")
-                        .WithMany("Stock_TransferBodys")
+                        .WithMany()
                         .HasForeignKey("SaleOrderID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -730,16 +732,6 @@ namespace SYS.Dal.Migrations
             modelBuilder.Entity("SYS.Entities.Concrete.Firm_Type", b =>
                 {
                     b.Navigation("Firms");
-                });
-
-            modelBuilder.Entity("SYS.Entities.Concrete.PurchaseOrder", b =>
-                {
-                    b.Navigation("Stock_TransferBodys");
-                });
-
-            modelBuilder.Entity("SYS.Entities.Concrete.SaleOrder", b =>
-                {
-                    b.Navigation("Stock_TransferBodys");
                 });
 
             modelBuilder.Entity("SYS.Entities.Concrete.Stock", b =>

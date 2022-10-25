@@ -29,14 +29,6 @@ namespace SYS.WinFormUI
         }
         private void Form_stockTransfer_Load(object sender, EventArgs e)
         {
-            //SqlCommand _command = new SqlCommand("select IDENT_CURRENT=@Rec('Firms')", _connection);
-            //_connection.Open();
-            //SqlDataReader _datareader = _command.ExecuteReader();
-            //while (_datareader.Read())
-            //{
-
-            //    textBox_TransferID.Text = (_datareader[@Rec]);
-            //}
             SqlCommand _command = new SqlCommand("select * from Stock_TransferHeaders",_connection);
             _connection.Open();
             SqlDataReader _datareader = _command.ExecuteReader();
@@ -49,10 +41,15 @@ namespace SYS.WinFormUI
 
         private void comboBox_type_SelectedIndexChanged(object sender, EventArgs e)
         {
+            comboBox_firmID.Items.Clear();
+            comboBox_firmName.Items.Clear();
+            comboBox_orderID.Items.Clear();
+            comboBox_orderID.Text = "";
+            comboBox_stockID.Items.Clear();
+            textBox_quantity.Clear();
             if (comboBox_transfertype.Text == "Input")
             {
-                comboBox_firmID.Items.Clear();
-                comboBox_firmName.Items.Clear();
+
                 SqlCommand _command = new SqlCommand("select [FirmID], [Name] from Firms where Firm_TypeID='1'", _connection);
                 _connection.Open();
                 SqlDataReader _datareader = _command.ExecuteReader();
@@ -66,8 +63,6 @@ namespace SYS.WinFormUI
             }
             else if(comboBox_transfertype.Text == "Output")
             {
-                comboBox_firmID.Items.Clear();
-                comboBox_firmName.Items.Clear();
                 SqlCommand _command = new SqlCommand("select [FirmID], [Name] from Firms where Firm_TypeID='2'", _connection);
                 _connection.Open();
                 SqlDataReader _datareader = _command.ExecuteReader();
@@ -99,53 +94,55 @@ namespace SYS.WinFormUI
 
         private void button_rowadd_Click(object sender, EventArgs e)
         {
-            Stock_TransferBody stock_transferbody = new Stock_TransferBody();
+            Stock_TransferBody _transferbody = new Stock_TransferBody();
 
-            stock_transferbody.TansferBodyID = Convert.ToInt32(comboBox_TransferID.Text);
-            stock_transferbody.Date = Convert.ToDateTime(dateTimePicker_orderDate.Text);
+            _transferbody.TransferHeaderID = Convert.ToInt32(comboBox_TransferID.Text);
+
             if (comboBox_transfertype.Text == "Input")
             {
-                stock_transferbody.PurchaseOrderID = Convert.ToInt32(comboBox_orderID.Text);
-                stock_transferbody.SaleOrderID = 0;
+                _transferbody.PurchaseOrderID = Convert.ToInt32(comboBox_orderID.Text);
+                _transferbody.SaleOrderID = 0;
             }
             else if (comboBox_transfertype.Text == "Output")
             {
-                stock_transferbody.PurchaseOrderID = 0;
-                stock_transferbody.SaleOrderID = Convert.ToInt32(comboBox_orderID.Text);
+                _transferbody.PurchaseOrderID =0;
+                _transferbody.SaleOrderID = Convert.ToInt32(comboBox_orderID.Text);
             }
-            stock_transferbody.StockID = Convert.ToInt32(comboBox_stockID.Text);
+
+            _transferbody.StockID = Convert.ToInt32(comboBox_stockID.Text);
+
             if (comboBox_transfertype.Text == "Input")
             {
-                stock_transferbody.Input = Convert.ToInt32(textBox_quantity.Text);
-                stock_transferbody.Output = 0;
+                _transferbody.Input = Convert.ToInt32(textBox_quantity.Text);
+                _transferbody.Output = 0;
             }
             else
             {
-                stock_transferbody.Input = 0;
-                stock_transferbody.Output = Convert.ToInt32(textBox_quantity.Text);
+                _transferbody.Input = 0;
+                _transferbody.Output = Convert.ToInt32(textBox_quantity.Text);
             }
-            stock_transferbody.UnitPrice = 0;
-            stock_transferbody.DiscountRate = 0;
-            stock_transferbody.DiscountAmount = 0;
-            stock_transferbody.VatRate = 0;
-            stock_transferbody.VatAmount = 0;
 
-            _BodyManager.Add(stock_transferbody);
+            _transferbody.UnitPrice = 0;
+            _transferbody.DiscountRate = 0;
+            _transferbody.DiscountAmount = 0;
+            _transferbody.VatRate = 0;
+            _transferbody.VatAmount = 0;
+
+            _BodyManager.Add(_transferbody);
         }
 
         private void comboBox_firmID_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox_transfertype.Text == "Input")
             {
-                SqlCommand _command = new SqlCommand("select * from Purchaseorders where PurchaseOrderID=@PO", _connection);
-                _connection.Open();
-                SqlParameter _parameter1 = new SqlParameter("@PO", comboBox_firmID.SelectedItem.ToString());
+                SqlCommand _command = new SqlCommand("select * from Purchaseorders where FirmID=@Firm", _connection);
+                SqlParameter _parameter1 = new SqlParameter("@Firm", comboBox_firmID.Text);
                 _command.Parameters.Add(_parameter1);
-                
-                SqlDataReader _reader = _command.ExecuteReader();
-                while (_reader.Read())
+                _connection.Open();
+                SqlDataReader _datareader = _command.ExecuteReader();
+                while (_datareader.Read())
                 {
-                    comboBox_orderID.Items.Add(_reader["PurchaseOrderID"]);
+                    comboBox_orderID.Items.Add(_datareader["PurchaseOrderID"]);
                 }
                 _connection.Close();
             }
@@ -172,11 +169,65 @@ namespace SYS.WinFormUI
 
             Firm _firm = _firmManager.GetById(_transferHeader.FirmID);
             comboBox_firmName.Text = _firm.Name;
+        }
 
+        private void comboBox_orderID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlCommand _command = new SqlCommand("select * from Purchaseorders where PurchaseOrderID=@PO",_connection);
+            SqlParameter parameter = new SqlParameter("@PO", comboBox_orderID.Text);
+            _command.Parameters.Add(parameter);
+            _connection.Open();
+            SqlDataReader _datareader = _command.ExecuteReader();
+            while (_datareader.Read())
+            {
+                comboBox_stockID.Items.Add(_datareader["StockID"]);
+
+            }
+            _connection.Close();
+        }
+
+        private void comboBox_stockID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox_transfertype.Text=="Input")
+            {
+                SqlCommand _command = new SqlCommand("Select * from Purchaseorders where PurchaseOrderID=@PO", _connection);
+                SqlParameter _parameter = new SqlParameter("@PO", comboBox_orderID.Text);
+                _command.Parameters.Add(_parameter);
+                _connection.Open();
+                SqlDataReader _datareader = _command.ExecuteReader();
+                while (_datareader.Read())
+                {
+                    textBox_quantity.Text = _datareader["Quantity"].ToString();
+                }
+                _connection.Close();
+            }
+            else
+            {
+                SqlCommand _command = new SqlCommand("Select * from Saleorders where SaleOrderID=@PO", _connection);
+                SqlParameter _parameter = new SqlParameter("@PO", comboBox_orderID.Text);
+                _command.Parameters.Add(_parameter);
+                _connection.Open();
+                SqlDataReader _datareader = _command.ExecuteReader();
+                while (_datareader.Read())
+                {
+                    textBox_quantity.Text = _datareader["Quantity"].ToString();
+                }
+                _connection.Close ();
+            }
+            
+        }
+
+        private void button_ınsert_Click_1(object sender, EventArgs e)
+        {
 
         }
 
-        private void button_New_Click(object sender, EventArgs e)
+        private void button_delete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_update_Click(object sender, EventArgs e)
         {
 
         }

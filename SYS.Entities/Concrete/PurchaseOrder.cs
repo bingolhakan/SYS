@@ -33,5 +33,6 @@ namespace SYS.Entities.Concrete
         public int StockID { get; set; }
         public Currency currency { get; set; }
         public int CurrencyID { get; set; }
+        public IEnumerable<Stock_TransferBody> Stock_TransferBodys { get; set; }
     }
 }

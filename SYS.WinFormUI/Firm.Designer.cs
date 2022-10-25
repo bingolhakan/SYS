@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.comboBox_firm_typeID = new System.Windows.Forms.ComboBox();
             this.label_firm_typeID = new System.Windows.Forms.Label();
             this.comboBox_countryID = new System.Windows.Forms.ComboBox();
@@ -39,10 +38,6 @@
             this.label_taxOffice = new System.Windows.Forms.Label();
             this.textBox_city = new System.Windows.Forms.TextBox();
             this.label_city = new System.Windows.Forms.Label();
-            this.label_firmID = new System.Windows.Forms.Label();
-            this.button_update = new System.Windows.Forms.Button();
-            this.button_delete = new System.Windows.Forms.Button();
-            this.button_ınsert = new System.Windows.Forms.Button();
             this.dataGridView_firm = new System.Windows.Forms.DataGridView();
             this.textBox_address = new System.Windows.Forms.TextBox();
             this.label_address = new System.Windows.Forms.Label();
@@ -50,25 +45,24 @@
             this.label_name = new System.Windows.Forms.Label();
             this.textBox_district = new System.Windows.Forms.TextBox();
             this.label_district = new System.Windows.Forms.Label();
-            this.textBox_firmID = new System.Windows.Forms.TextBox();
+            this.comboBox_firmID = new System.Windows.Forms.ComboBox();
+            this.button_next = new System.Windows.Forms.Button();
+            this.button_before = new System.Windows.Forms.Button();
+            this.button_update = new System.Windows.Forms.Button();
+            this.button_delete = new System.Windows.Forms.Button();
+            this.button_ınsert = new System.Windows.Forms.Button();
+            this.label_firmID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_firm)).BeginInit();
             this.SuspendLayout();
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(502, 404);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(286, 34);
-            this.richTextBox1.TabIndex = 99;
-            this.richTextBox1.Text = "Search";
             // 
             // comboBox_firm_typeID
             // 
             this.comboBox_firm_typeID.FormattingEnabled = true;
             this.comboBox_firm_typeID.Location = new System.Drawing.Point(410, 8);
             this.comboBox_firm_typeID.Name = "comboBox_firm_typeID";
-            this.comboBox_firm_typeID.Size = new System.Drawing.Size(111, 28);
+            this.comboBox_firm_typeID.Size = new System.Drawing.Size(165, 28);
             this.comboBox_firm_typeID.TabIndex = 98;
+            this.comboBox_firm_typeID.Click += new System.EventHandler(this.comboBox_firm_typeID_Click);
             // 
             // label_firm_typeID
             // 
@@ -87,6 +81,7 @@
             this.comboBox_countryID.Name = "comboBox_countryID";
             this.comboBox_countryID.Size = new System.Drawing.Size(168, 28);
             this.comboBox_countryID.TabIndex = 96;
+            this.comboBox_countryID.Click += new System.EventHandler(this.comboBox_countryID_Click);
             // 
             // label_CounrtyID
             // 
@@ -119,7 +114,7 @@
             // 
             this.textBox_taxOffice.Location = new System.Drawing.Point(142, 140);
             this.textBox_taxOffice.Name = "textBox_taxOffice";
-            this.textBox_taxOffice.Size = new System.Drawing.Size(165, 27);
+            this.textBox_taxOffice.Size = new System.Drawing.Size(171, 27);
             this.textBox_taxOffice.TabIndex = 92;
             // 
             // label_taxOffice
@@ -138,7 +133,6 @@
             this.textBox_city.Name = "textBox_city";
             this.textBox_city.Size = new System.Drawing.Size(159, 27);
             this.textBox_city.TabIndex = 90;
-            this.textBox_city.TextChanged += new System.EventHandler(this.textBox_city_TextChanged);
             // 
             // label_city
             // 
@@ -149,54 +143,6 @@
             this.label_city.Size = new System.Drawing.Size(38, 19);
             this.label_city.TabIndex = 89;
             this.label_city.Text = "City";
-            this.label_city.Click += new System.EventHandler(this.label_city_Click);
-            // 
-            // label_firmID
-            // 
-            this.label_firmID.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_firmID.AutoSize = true;
-            this.label_firmID.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label_firmID.Location = new System.Drawing.Point(13, 12);
-            this.label_firmID.Name = "label_firmID";
-            this.label_firmID.Size = new System.Drawing.Size(64, 19);
-            this.label_firmID.TabIndex = 77;
-            this.label_firmID.Text = "Firm ID";
-            // 
-            // button_update
-            // 
-            this.button_update.BackColor = System.Drawing.Color.Khaki;
-            this.button_update.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_update.Location = new System.Drawing.Point(231, 404);
-            this.button_update.Name = "button_update";
-            this.button_update.Size = new System.Drawing.Size(103, 38);
-            this.button_update.TabIndex = 88;
-            this.button_update.Text = "Update";
-            this.button_update.UseVisualStyleBackColor = false;
-            this.button_update.Click += new System.EventHandler(this.button_update_Click);
-            // 
-            // button_delete
-            // 
-            this.button_delete.BackColor = System.Drawing.Color.IndianRed;
-            this.button_delete.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_delete.Location = new System.Drawing.Point(122, 404);
-            this.button_delete.Name = "button_delete";
-            this.button_delete.Size = new System.Drawing.Size(103, 38);
-            this.button_delete.TabIndex = 87;
-            this.button_delete.Text = "Delete";
-            this.button_delete.UseVisualStyleBackColor = false;
-            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
-            // 
-            // button_ınsert
-            // 
-            this.button_ınsert.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.button_ınsert.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_ınsert.Location = new System.Drawing.Point(13, 404);
-            this.button_ınsert.Name = "button_ınsert";
-            this.button_ınsert.Size = new System.Drawing.Size(103, 38);
-            this.button_ınsert.TabIndex = 86;
-            this.button_ınsert.Text = "Insert";
-            this.button_ınsert.UseVisualStyleBackColor = false;
-            this.button_ınsert.Click += new System.EventHandler(this.button_ınsert_Click);
             // 
             // dataGridView_firm
             // 
@@ -260,20 +206,96 @@
             this.label_district.TabIndex = 79;
             this.label_district.Text = "District";
             // 
-            // textBox_firmID
+            // comboBox_firmID
             // 
-            this.textBox_firmID.Enabled = false;
-            this.textBox_firmID.Location = new System.Drawing.Point(142, 8);
-            this.textBox_firmID.Name = "textBox_firmID";
-            this.textBox_firmID.Size = new System.Drawing.Size(168, 27);
-            this.textBox_firmID.TabIndex = 78;
+            this.comboBox_firmID.FormattingEnabled = true;
+            this.comboBox_firmID.Location = new System.Drawing.Point(142, 7);
+            this.comboBox_firmID.Name = "comboBox_firmID";
+            this.comboBox_firmID.Size = new System.Drawing.Size(171, 28);
+            this.comboBox_firmID.TabIndex = 100;
+            this.comboBox_firmID.Click += new System.EventHandler(this.comboBox_firmID_Click);
+            // 
+            // button_next
+            // 
+            this.button_next.BackColor = System.Drawing.Color.DarkGray;
+            this.button_next.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_next.Location = new System.Drawing.Point(285, 401);
+            this.button_next.Name = "button_next";
+            this.button_next.Size = new System.Drawing.Size(65, 52);
+            this.button_next.TabIndex = 187;
+            this.button_next.Text = ">";
+            this.button_next.UseVisualStyleBackColor = false;
+            // 
+            // button_before
+            // 
+            this.button_before.BackColor = System.Drawing.Color.DarkGray;
+            this.button_before.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_before.Location = new System.Drawing.Point(12, 401);
+            this.button_before.Name = "button_before";
+            this.button_before.Size = new System.Drawing.Size(65, 50);
+            this.button_before.TabIndex = 186;
+            this.button_before.Text = "<";
+            this.button_before.UseVisualStyleBackColor = false;
+            // 
+            // button_update
+            // 
+            this.button_update.BackColor = System.Drawing.Color.Khaki;
+            this.button_update.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_update.Location = new System.Drawing.Point(219, 401);
+            this.button_update.Name = "button_update";
+            this.button_update.Size = new System.Drawing.Size(60, 52);
+            this.button_update.TabIndex = 185;
+            this.button_update.Text = "Update";
+            this.button_update.UseVisualStyleBackColor = false;
+            this.button_update.Click += new System.EventHandler(this.button_update_Click_1);
+            // 
+            // button_delete
+            // 
+            this.button_delete.BackColor = System.Drawing.Color.IndianRed;
+            this.button_delete.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_delete.Location = new System.Drawing.Point(153, 401);
+            this.button_delete.Name = "button_delete";
+            this.button_delete.Size = new System.Drawing.Size(60, 52);
+            this.button_delete.TabIndex = 184;
+            this.button_delete.Text = "Delete";
+            this.button_delete.UseVisualStyleBackColor = false;
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click_1);
+            // 
+            // button_ınsert
+            // 
+            this.button_ınsert.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.button_ınsert.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_ınsert.Location = new System.Drawing.Point(82, 401);
+            this.button_ınsert.Name = "button_ınsert";
+            this.button_ınsert.Size = new System.Drawing.Size(65, 52);
+            this.button_ınsert.TabIndex = 183;
+            this.button_ınsert.Text = "Insert";
+            this.button_ınsert.UseVisualStyleBackColor = false;
+            this.button_ınsert.Click += new System.EventHandler(this.button_ınsert_Click_1);
+            // 
+            // label_firmID
+            // 
+            this.label_firmID.AutoSize = true;
+            this.label_firmID.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_firmID.Location = new System.Drawing.Point(13, 12);
+            this.label_firmID.Name = "label_firmID";
+            this.label_firmID.Size = new System.Drawing.Size(64, 19);
+            this.label_firmID.TabIndex = 188;
+            this.label_firmID.Text = "Firm ID";
             // 
             // Form_firm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.richTextBox1);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(800, 459);
+            this.Controls.Add(this.label_firmID);
+            this.Controls.Add(this.button_next);
+            this.Controls.Add(this.button_before);
+            this.Controls.Add(this.button_update);
+            this.Controls.Add(this.button_delete);
+            this.Controls.Add(this.button_ınsert);
+            this.Controls.Add(this.comboBox_firmID);
             this.Controls.Add(this.comboBox_firm_typeID);
             this.Controls.Add(this.label_firm_typeID);
             this.Controls.Add(this.comboBox_countryID);
@@ -284,10 +306,6 @@
             this.Controls.Add(this.label_taxOffice);
             this.Controls.Add(this.textBox_city);
             this.Controls.Add(this.label_city);
-            this.Controls.Add(this.label_firmID);
-            this.Controls.Add(this.button_update);
-            this.Controls.Add(this.button_delete);
-            this.Controls.Add(this.button_ınsert);
             this.Controls.Add(this.dataGridView_firm);
             this.Controls.Add(this.textBox_address);
             this.Controls.Add(this.label_address);
@@ -295,7 +313,6 @@
             this.Controls.Add(this.label_name);
             this.Controls.Add(this.textBox_district);
             this.Controls.Add(this.label_district);
-            this.Controls.Add(this.textBox_firmID);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form_firm";
@@ -309,8 +326,6 @@
         }
 
         #endregion
-
-        private RichTextBox richTextBox1;
         private ComboBox comboBox_firm_typeID;
         private Label label_firm_typeID;
         private ComboBox comboBox_countryID;
@@ -321,10 +336,6 @@
         private Label label_taxOffice;
         private TextBox textBox_city;
         private Label label_city;
-        private Label label_firmID;
-        private Button button_update;
-        private Button button_delete;
-        private Button button_ınsert;
         private DataGridView dataGridView_firm;
         private TextBox textBox_address;
         private Label label_address;
@@ -332,6 +343,12 @@
         private Label label_name;
         private TextBox textBox_district;
         private Label label_district;
-        private TextBox textBox_firmID;
+        private ComboBox comboBox_firmID;
+        private Button button_next;
+        private Button button_before;
+        private Button button_update;
+        private Button button_delete;
+        private Button button_ınsert;
+        private Label label_firmID;
     }
 }

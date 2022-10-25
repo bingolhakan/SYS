@@ -22,7 +22,7 @@ namespace SYS.WinFormUI
         {
             groupBox_login.BackColor = Color.Transparent;
             groupBox_login.Location = new Point(850, 400);
-            menuStrip.Enabled = false;
+            //menuStrip.Enabled = false;
         }
 
         private void eMPLOYEEACCOUNTToolStripMenuItem_Click(object sender, EventArgs e)

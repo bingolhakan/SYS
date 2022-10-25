@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label_currencyID = new System.Windows.Forms.Label();
-            this.richTextBox_search = new System.Windows.Forms.RichTextBox();
             this.button_update = new System.Windows.Forms.Button();
             this.button_delete = new System.Windows.Forms.Button();
             this.button_ınsert = new System.Windows.Forms.Button();
@@ -49,16 +48,6 @@
             this.label_currencyID.Size = new System.Drawing.Size(100, 19);
             this.label_currencyID.TabIndex = 37;
             this.label_currencyID.Text = "Currency ID";
-            // 
-            // richTextBox_search
-            // 
-            this.richTextBox_search.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.richTextBox_search.Location = new System.Drawing.Point(556, 200);
-            this.richTextBox_search.Name = "richTextBox_search";
-            this.richTextBox_search.Size = new System.Drawing.Size(222, 29);
-            this.richTextBox_search.TabIndex = 36;
-            this.richTextBox_search.Text = "Search";
-            this.richTextBox_search.UseWaitCursor = true;
             // 
             // button_update
             // 
@@ -100,22 +89,22 @@
             this.dataGridView_currency.Name = "dataGridView_currency";
             this.dataGridView_currency.RowHeadersWidth = 51;
             this.dataGridView_currency.RowTemplate.Height = 29;
-            this.dataGridView_currency.Size = new System.Drawing.Size(776, 155);
+            this.dataGridView_currency.Size = new System.Drawing.Size(538, 155);
             this.dataGridView_currency.TabIndex = 32;
             this.dataGridView_currency.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_currency_CellContentClick);
             // 
             // textBox_description
             // 
-            this.textBox_description.Location = new System.Drawing.Point(380, 5);
+            this.textBox_description.Location = new System.Drawing.Point(308, 5);
             this.textBox_description.Name = "textBox_description";
-            this.textBox_description.Size = new System.Drawing.Size(398, 27);
+            this.textBox_description.Size = new System.Drawing.Size(236, 27);
             this.textBox_description.TabIndex = 31;
             // 
             // label_name
             // 
             this.label_name.AutoSize = true;
             this.label_name.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label_name.Location = new System.Drawing.Point(280, 9);
+            this.label_name.Location = new System.Drawing.Point(210, 9);
             this.label_name.Name = "label_name";
             this.label_name.Size = new System.Drawing.Size(92, 19);
             this.label_name.TabIndex = 30;
@@ -126,16 +115,15 @@
             this.textBox_currencyId.Enabled = false;
             this.textBox_currencyId.Location = new System.Drawing.Point(106, 5);
             this.textBox_currencyId.Name = "textBox_currencyId";
-            this.textBox_currencyId.Size = new System.Drawing.Size(125, 27);
+            this.textBox_currencyId.Size = new System.Drawing.Size(98, 27);
             this.textBox_currencyId.TabIndex = 29;
             // 
             // Form_currencies
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 245);
+            this.ClientSize = new System.Drawing.Size(550, 245);
             this.Controls.Add(this.label_currencyID);
-            this.Controls.Add(this.richTextBox_search);
             this.Controls.Add(this.button_update);
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.button_ınsert);
@@ -157,7 +145,6 @@
         #endregion
 
         private Label label_currencyID;
-        private RichTextBox richTextBox_search;
         private Button button_update;
         private Button button_delete;
         private Button button_ınsert;
