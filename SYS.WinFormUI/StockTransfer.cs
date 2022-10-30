@@ -107,6 +107,7 @@ namespace SYS.WinFormUI
             {
                 _transferbody.PurchaseOrderID =0;
                 _transferbody.SaleOrderID = Convert.ToInt32(comboBox_orderID.Text);
+                _transferbody.PurchaseOrderID = 0;
             }
 
             _transferbody.StockID = Convert.ToInt32(comboBox_stockID.Text);
@@ -122,11 +123,10 @@ namespace SYS.WinFormUI
                 _transferbody.Output = Convert.ToInt32(textBox_quantity.Text);
             }
 
-            _transferbody.UnitPrice = 0;
-            _transferbody.DiscountRate = 0;
-            _transferbody.DiscountAmount = 0;
-            _transferbody.VatRate = 0;
-            _transferbody.VatAmount = 0;
+            _transferbody.purchaseorders = null;
+            _transferbody.saleorders = null;
+            _transferbody.stocks = null;
+            _transferbody.stock_transferheaders = null;
 
             _BodyManager.Add(_transferbody);
         }

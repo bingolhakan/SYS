@@ -30,8 +30,5 @@ namespace SYS.Entities.Concrete
         public int PurchaseOrderID { get; set; }
         public SaleOrder saleorder { get; set; }
         public int SaleOrderID { get; set; }
-
-        public IEnumerable<Stock_TransferHeader> stock_transferheaders { get; set; }
-
     }
 }
